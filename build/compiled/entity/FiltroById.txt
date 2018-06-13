@@ -1,0 +1,61 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package entity;
+
+import net.sourceforge.floggy.persistence.Filter;
+import net.sourceforge.floggy.persistence.Persistable;
+
+/**
+ *
+ * @author 9906
+ */
+public class FiltroById implements Filter {
+
+    private int codConta, codParcela;
+
+    public FiltroById(int codConta, int codParcela) {
+        this.codConta = codConta;
+        this.codParcela = codParcela;
+    }
+
+    public boolean matches(Persistable parcela) {
+        Parcela p =(Parcela)parcela;
+        return p.getCodConta() == codConta &&
+               p.getCodParcela()==codParcela;
+
+
+    }
+
+    /**
+     * @return the codConta
+     */
+    public int getCodConta() {
+        return codConta;
+    }
+
+    /**
+     * @param codConta the codConta to set
+     */
+    public void setCodConta(int codConta) {
+        this.codConta = codConta;
+    }
+
+    /**
+     * @return the codParcela
+     */
+    public int getCodParcela() {
+        return codParcela;
+    }
+
+    /**
+     * @param codParcela the codParcela to set
+     */
+    public void setCodParcela(int codParcela) {
+        this.codParcela = codParcela;
+    }
+
+ 
+}
